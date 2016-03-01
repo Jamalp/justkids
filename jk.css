@@ -367,7 +367,8 @@ html, body {
   height: 100%; }
 
 body {
-  background-color: #FCFFF5; }
+  background: url("images/bg.jpg") center center no-repeat;
+  background-size: cover; }
 
 @-webkit-keyframes fadeOut {
   0% {
