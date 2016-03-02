@@ -368,7 +368,11 @@ html, body {
 
 body {
   background: url("images/bg.jpg") center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 16px; }
 
 @-webkit-keyframes fadeOut {
   0% {
@@ -388,6 +392,21 @@ body {
 .fade {
   opacity: 0; }
 
+.video-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100; }
+  .video-bg video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
 .justkids {
   position: relative; }
   .justkids .page {
@@ -398,21 +417,33 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 0 5%; }
+    padding: 0 9%; }
   .justkids .jk__intro {
-    width: 50%;
-    padding: 0 50px; }
+    max-width: 750px;
+    width: 50%; }
+    .justkids .jk__intro h1, .justkids .jk__intro p {
+      opacity: 0;
+      -webkit-transform: translateY(5px);
+              transform: translateY(5px);
+      -webkit-transition: all 1.5s ease;
+      transition: all 1.5s ease; }
+      .justkids .jk__intro h1.fade-in, .justkids .jk__intro p.fade-in {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0); }
+    .justkids .jk__intro h1 {
+      letter-spacing: 0.2rem;
+      font-size: 26px; }
     .justkids .jk__intro p {
-      width: 50%;
-      margin: 0 auto; }
+      font-size: 18px; }
   .justkids .jk__video {
     position: absolute;
     top: 0;
@@ -423,6 +454,8 @@ body {
     z-index: 2;
     -webkit-transition: all 1.5s ease;
     transition: all 1.5s ease; }
+    .justkids .jk__video.below {
+      z-index: -1000; }
     @media (max-width: 600px) {
       .justkids .jk__video {
         display: none; } }
